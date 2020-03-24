@@ -21,7 +21,7 @@ tnt_data.async = function () {
     var update_track = function (obj) {
         var track = this;
         spinner.on.call(track);
-        update_track.retriever().call(track, obj.loc)
+        return update_track.retriever().call(track, obj.loc)
             .then (function (resp) {
                 track.data().elements(resp);
                 obj.on_success();
